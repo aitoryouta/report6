@@ -1,33 +1,53 @@
 package jp.ac.uryukyu.ie.e175760;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Tekazu {
     String name;
     public boolean flag;
 
-    public Tekazu(String name){
+    public Tekazu(String name) {
         this.name = name;
         flag = false;
     }
 
 
-
-    public String getName(){
+    public String getName() {
         return name;
     }
-    public void setName(String name){this.name=name;}
 
-    public  boolean isFlag() { return flag; }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-    public void setFlag(boolean dead){ this.flag = flag;}
+    public boolean isFlag() {
+        return flag;
+    }
 
+    public void setFlag(boolean dead) {
+        this.flag = flag;
+    }
 
 
     public void attack() {
         int rando = (int) (Math.random() * 3);
         Scanner scanner = new Scanner(System.in);
         int p = scanner.nextInt();
+
+       if(p>3 || p<1) {
+           System.out.println("１〜３までの数字しか選べないよ！！！");
+           int i = 0;
+           i++;
+           System.out.println("もう" + i + "回目だよ！！！注意書きを読んでから入力してね！！");
+
+
+
+
+
+
+
+
 /* switch (式){
   case 定数1:
     実行する文1;
@@ -40,40 +60,51 @@ public class Tekazu {
     ...
     break;
 }*/
-        if (p != rando) {
-            flag = true;
+       }else if(p<4 || p>0) {
 
-            switch (p) {
-                case 1:
-                    if (rando == 2) {
-                        System.out.println("勝ちました！！\n");
-                    } else {
-                        System.out.println("負けました！！\n");
-                    }break;
-                case 2:
-                    if (rando == 1) {
-                        System.out.println("負けました！！\n");
 
-                    } else {
-                        System.out.println("勝ちました！！\n");
-                    }break;
-                case 3:
-                    if (rando == 1) {
-                        System.out.println("勝ちました！！\n");
-                    } else {
-                        System.out.println("負けました\n");
-                    }break;
 
-            }
+if(p !=rando)
+
+{
+        flag = true;
+
+
+        switch (p) {
+            case 1:
+                if (rando == 2) {
+                    System.out.println("勝ちました！！\n");
+                } else {
+                    System.out.println("負けました！！\n");
+                }
+                break;
+            case 2:
+                if (rando == 1) {
+                    System.out.println("負けました！！\n");
+
+                } else {
+                    System.out.println("勝ちました！！\n");
+                }
+                break;
+            case 3:
+                if (rando == 1) {
+                    System.out.println("勝ちました！！\n");
+                } else {
+                    System.out.println("負けました\n");
+                }
+                break;
         }
-        if (p == rando) {
-            flag = false;
-            System.out.println("あいこです!!\n");
-        }
+
+            if(p ==rando)
+
+    {
+        flag = false;
+        System.out.println("あいこです!!\n");
+        System.out.println("もう一度出す手を入力しよう！！！");
     }
 
+}}
 
-}
-
-
-
+    else{
+           System.out.println("入力エラーです！！入力した数字を確認してもう一度入力してください！");
+       }}}
