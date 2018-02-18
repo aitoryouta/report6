@@ -12,11 +12,11 @@ public class Tekazu {
 
 
     public Tekazu(String name) {
-        this.name = name;
+       this.name = name;
         flag = false;
     }
 
-    public String getName() {
+   public String getName() {
         return name;
     }
 
@@ -36,59 +36,57 @@ public class Tekazu {
     public void attack() {
 
         int rando = (int) (Math.random() * 3);
-
+        String judge = "勝ちました!!"+getName()+"が先攻です!!\n";
+        String judge_1="負けました..."+getName()+"が後攻です\n";
         try {
             Scanner scanner = new Scanner(System.in);
             int p = scanner.nextInt();
+            
             if (p < 4 && p > 0) {
 
 
-                if (p != rando)
-
-                {
+                if (p != rando) {
                     flag = true;
 
+                        switch (p) {
+                            case 1:
+                                System.out.println("あなたはグーです！");
+                                if (rando == 2) {
+                                    System.out.println(judge);
+                                } else {
+                                    System.out.println(judge_1);
+                                }
+                                break;
+                            case 2:
+                                System.out.println("あなたはチョキです！");
+                                if (rando == 1) {
+                                    System.out.println(judge_1);
+                                }else{
+                                    System.out.println(judge);
+                                }
+                                break;
+                            case 3:
+                                System.out.println("あなたはパーです！");
+                                if (rando == 1) {
+                                    System.out.println(judge);
+                                }else{
+                                    System.out.println(judge_1);
+                                }
+                                break;
+                                }
 
-                    switch (p) {
-                        case 1:
-                            if (rando == 2) {
-                                System.out.println("勝ちました！！\n");
-                            } else {
-                                System.out.println("負けました！！\n");
-                            }
-                            break;
-                        case 2:
-                            if (rando == 1) {
-                                System.out.println("負けました！！\n");
-
-                            } else {
-                                System.out.println("勝ちました！！\n");
-                            }
-                            break;
-                        case 3:
-                            if (rando == 1) {
-                                System.out.println("勝ちました！！\n");
-                            } else {
-                                System.out.println("負けました\n");
-                            }
-                            break;
-                    }
-
-                    if (p == rando)
-
-                    {
+                    if (p == rando) {
                         flag = false;
                         System.out.println("あいこです!!\n");
                         System.out.println("もう一度出す手を入力しよう！！！");
                     }
-
                 }
-            } else {
+            }else{
                 System.out.println("入力エラーです！！\n１〜３までの数字しか選べないよ！！！\n入力した数字を確認してもう一度入力してください！");
             }
 
 
-        } catch (InputMismatchException e) {
+        }catch (InputMismatchException e) {
             System.out.println("型が違います！！！：" );
                 System.out.println("１〜３までの数字しか選べないよ！！！");
                 System.out.println("入力した数字を確認してもう一度入力してください");
