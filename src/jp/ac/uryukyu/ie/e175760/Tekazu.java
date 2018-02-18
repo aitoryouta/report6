@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 
 public class Tekazu {
-    String name;
+    private String name;
     public boolean flag;
 
 
