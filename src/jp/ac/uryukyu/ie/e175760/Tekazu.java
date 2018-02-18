@@ -78,7 +78,7 @@ public class Tekazu {
                     }
                 else if (p == rando) {
                     flag = false;
-                    System.out.println("あいこです!!\n");
+                    System.out.println("じゃんけんの結果:あいこです!!\n");
                     System.out.println("もう一度出す手を入力しよう！！！");
                 }
             }else{
