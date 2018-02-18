@@ -75,12 +75,11 @@ public class Tekazu {
                                 }
                                 break;
                                 }
-
-                    if (p == rando) {
-                        flag = false;
-                        System.out.println("あいこです!!\n");
-                        System.out.println("もう一度出す手を入力しよう！！！");
                     }
+                else if (p == rando) {
+                    flag = false;
+                    System.out.println("あいこです!!\n");
+                    System.out.println("もう一度出す手を入力しよう！！！");
                 }
             }else{
                 /*例外処理自体ではintの型を全て受け取ってしまうので、それ以外の条件をif文で書いた。

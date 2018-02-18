@@ -11,7 +11,7 @@ public class Main {
         System.out.println("じゃんけんを開始します。\n「グー」なら１\n「チョキ」なら２\n「パー」なら３を入力してください");
         while (!tekazu.isFlag()) {
             count++;
-            System.out.println(count + "回目\n");
+            System.out.println(count + "回目:選んだ数字を入力してください\n");
             tekazu.attack();
 
         }
