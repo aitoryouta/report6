@@ -6,30 +6,18 @@ import java.io.*;
 public class Main {
 
     public static void main(String[] args) {
-        Tekazu tekazu = new Tekazu("playaer");
+        Tekazu tekazu = new Tekazu("player");
         int count = 0;
         System.out.println("じゃんけんを開始します。\n「グー」なら１\n「チョキ」なら２\n「パー」なら３を入力してください");
         while (!tekazu.isFlag()) {
             count++;
-            System.out.println(count + "回戦目");
+            System.out.println(count + "回目\n");
             tekazu.attack();
 
         }
 
-
-        System.out.println("終わりですよー");
-
-   /* int[] s = new int[1];
-
-    public Data(int[] data_1){
-        this.s= data_1;
-
-        public int getAttack(){return attack;}
-
-        public void setAttack(int attack){this.attack=attack;}
-
-
-    }*/
+        System.out.println("それではゲームを開始してください");
+        
 
     }
 
