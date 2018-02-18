@@ -31,28 +31,27 @@ public class Tekazu {
     public void setFlag(boolean dead) {
         this.flag = flag;
     }
-
-
     public void attack() {
 
         int rando = (int) (Math.random() * 3);
-        String judge = "勝ちました!!"+getName()+"が先攻です!!\n";
-        String judge_1="負けました..."+getName()+"が後攻です\n";
+        String judge = "じゃんけんの結果：勝ちました!!\n"+getName()+"が先攻です!!\n";
+        String judge_1="じゃんけんの結果：負けました...\n"+getName()+"が後攻です\n";
         try {
+            ///この部分で入力を受け付けている。と同時に例外処理を行なっていて、int以外の型が入力された時にエラーば出るようになっている。
             Scanner scanner = new Scanner(System.in);
             System.out.println("");
             int p = scanner.nextInt();
-            ///int rando= scanner.nextInt();
-
+            /*int rando= scanner.nextInt();
+            * この部分でもうPLAYER対PLAYERを行いたいと思ったが
+            * 入力される数字を画面上に出力しないで数字だけを受け取るやり方がわからなかったため
+            * 実装部分だけ残した。やり方がわかった時ように実行できるように残しておく*/
             if (p < 4 && p > 0) {
-
-
                 if (p != rando) {
                     flag = true;
 
                         switch (p) {
                             case 1:
-                                System.out.println("あなたはグーです！");
+                                System.out.println("あなたはグーを選びました！");
                                 if (rando == 2) {
                                     System.out.println(judge);
                                 } else {
@@ -60,7 +59,7 @@ public class Tekazu {
                                 }
                                 break;
                             case 2:
-                                System.out.println("あなたはチョキです！");
+                                System.out.println("あなたはチョキを選びました！");
                                 if (rando == 1) {
                                     System.out.println(judge_1);
                                 }else{
@@ -68,7 +67,7 @@ public class Tekazu {
                                 }
                                 break;
                             case 3:
-                                System.out.println("あなたはパーです！");
+                                System.out.println("あなたはパーを選びました！");
                                 if (rando == 1) {
                                     System.out.println(judge);
                                 }else{
@@ -84,11 +83,12 @@ public class Tekazu {
                     }
                 }
             }else{
+                /*例外処理自体ではintの型を全て受け取ってしまうので、それ以外の条件をif文で書いた。
+                * そうする事で１〜３までの数字しか受け取らないようになっている*/
                 System.out.println("入力エラーです！！\n１〜３までの数字しか選べないよ！！！\n入力した数字を確認してもう一度入力してください！");
             }
-
-
         }catch (InputMismatchException e) {
+            ///ここで例外をキャッチ！今回は上でも書いてある通り、int以外の型が入力された時の例外。
             System.out.println("型が違います！！！：" );
                 System.out.println("１〜３までの数字しか選べないよ！！！");
                 System.out.println("入力した数字を確認してもう一度入力してください");
