@@ -40,8 +40,10 @@ public class Tekazu {
         String judge_1="負けました..."+getName()+"が後攻です\n";
         try {
             Scanner scanner = new Scanner(System.in);
+            System.out.println("");
             int p = scanner.nextInt();
-            
+            ///int rando= scanner.nextInt();
+
             if (p < 4 && p > 0) {
 
 
